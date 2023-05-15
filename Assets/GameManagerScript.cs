@@ -136,31 +136,32 @@ public class GameManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (IsCleard() == false)
         {
-            Vector2Int playerIndex = GetPlayerIndex();
-            MoveTag("Player", playerIndex, playerIndex + new Vector2Int(1,0));
-        }
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            Vector2Int playerIndex = GetPlayerIndex();
-            MoveTag("Player", playerIndex, playerIndex + new Vector2Int(-1,0));
+            if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                Vector2Int playerIndex = GetPlayerIndex();
+                MoveTag("Player", playerIndex, playerIndex + new Vector2Int(1, 0));
+            }
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                Vector2Int playerIndex = GetPlayerIndex();
+                MoveTag("Player", playerIndex, playerIndex + new Vector2Int(-1, 0));
 
-        }
+            }
 
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            Vector2Int playerIndex = GetPlayerIndex();
-            MoveTag("Player", playerIndex, playerIndex + new Vector2Int(0, -1));
-        }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            Vector2Int playerIndex = GetPlayerIndex();
-            MoveTag("Player", playerIndex, playerIndex + new Vector2Int(0, 1));
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                Vector2Int playerIndex = GetPlayerIndex();
+                MoveTag("Player", playerIndex, playerIndex + new Vector2Int(0, -1));
+            }
+            if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                Vector2Int playerIndex = GetPlayerIndex();
+                MoveTag("Player", playerIndex, playerIndex + new Vector2Int(0, 1));
 
-        }
-
-        if (IsCleard() == true)
+            }
+        }else
         {
             clearText.SetActive(true);
             Debug.Log("Clear!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
